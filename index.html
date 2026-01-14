@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridal Artistry | Professional Makeup Artist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c5a059;
+            --soft-pink: #fffafa;
+            --dark: #1a1a1a;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            color: var(--dark); 
+            line-height: 1.6; 
+            background-color: #fdfdfd;
+        }
+
+        /* Navigation */
+        nav { 
+            background: var(--white); 
+            padding: 20px; 
+            display: flex; 
+            justify-content: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Hero Section */
+        .hero { 
+            height: 80vh; 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1400&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 4.5rem); margin-bottom: 10px; }
+
+        /* Section Styling */
+        section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+        h2 { font-family: 'Playfair Display', serif; text-align: center; font-size: 2.5rem; margin-bottom: 40px; }
+
+        /* Package Cards (Box Elements) */
+        .package-container { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+        }
+        .card { 
+            background: var(--white); 
+            padding: 40px; 
+            border-radius: 15px; 
+            text-align: center; 
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--gold);
+            transition: transform 0.3s ease;
+        }
+        .card:hover { transform: translateY(-10px); }
+        .card h3 { font-size: 1.8rem; margin-bottom: 15px; }
+        .price { font-size: 2rem; color: var(--gold); font-weight: 700; margin-bottom: 20px; }
+        .card ul { list-style: none; margin-bottom: 25px; color: #666; }
+        .btn { background: var(--gold); color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: 600; }
+
+        /* Gallery Grid */
+        .gallery { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 15px; 
+        }
+        .gallery img { 
+            width: 100%; 
+            height: 300px; 
+            object-fit: cover; 
+            border-radius: 10px; 
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .gallery img:hover { opacity: 0.8; }
+
+        /* Testimonials */
+        .testimonial-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px;
+        }
+        .t-card { background: var(--soft-pink); padding: 30px; border-radius: 10px; font-style: italic; position: relative; }
+
+        /* Footer */
+        footer { background: var(--dark); color: white; text-align: center; padding: 50px 20px; margin-top: 50px; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            nav { flex-wrap: wrap; }
+            nav a { margin: 5px 10px; font-size: 0.8rem; }
+            section { padding: 50px 15px; }
+            .hero { height: 60vh; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#packages">Packages</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#testimonials">Reviews</a>
+</nav>
+
+<header class="hero">
+    <div>
+        <h1>Bridal Artistry</h1>
+        <p>Expert Makeup & Hair for your special day.</p>
+    </div>
+</header>
+
+<section id="packages">
+    <h2>Wedding Packages</h2>
+    <div class="package-container">
+        <div class="card">
+            <h3>Classic Bride</h3>
+            <div class="price">$350</div>
+            <ul>
+                <li>HD Bridal Makeup</li>
+                <li>Basic Hair Styling</li>
+                <li>Saree/Dupatta Draping</li>
+            </ul>
+            <a href="#" class="btn">Book Now</a>
+        </div>
+        <div class="card">
+            <h3>Royal Bride</h3>
+            <div class="price">$550</div>
+            <ul>
+                <li>Premium Airbrush Makeup</li>
+                <li>Advanced Hair Artistry</li>
+                <li>Jewelry Setting & Lashes</li>
+            </ul>
+            <a href="#" class="btn">Book Now</a>
+        </div>
+        <div class="card">
+            <h3>Bridal Party</h3>
+            <div class="price">$150</div>
+            <ul>
+                <li>Standard Glam Makeup</li>
+                <li>Elegant Blowdry/Curls</li>
+                <li>Group Discounts Available</li>
+            </ul>
+            <a href="#" class="btn">Book Now</a>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2>The Gallery</h2>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1594465919760-441fe5908ab0?auto=format&fit=crop&w=500&q=80" alt="Bridal Look 1">
+        <img src="https://images.unsplash.com/photo-1481325544412-f99583ced491?auto=format&fit=crop&w=500&q=80" alt="Bridal Look 2">
+        <img src="https://images.unsplash.com/photo-1511130558044-77209552a479?auto=format&fit=crop&w=500&q=80" alt="Bridal Look 3">
+        <img src="https://images.unsplash.com/photo-1526045431048-f857369aba09?auto=format&fit=crop&w=500&q=80" alt="Bridal Look 4">
+    </div>
+</section>
+
+<section id="testimonials">
+    <h2>Kind Words</h2>
+    <div class="testimonial-grid">
+        <div class="t-card">
+            <p>"I felt like a princess. The makeup stayed fresh from the morning ceremony until the late-night party!"</p>
+            <br><strong>- Jessica M.</strong>
+        </div>
+        <div class="t-card">
+            <p>"The best experience ever. She listens to what you want and executes it perfectly."</p>
+            <br><strong>- Sophia L.</strong>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Bridal Artistry by Your Friend.</p>
+    <p>Follow her on Instagram: @YourHandle</p>
+</footer>
+
+</body>
+</html>
