@@ -100,6 +100,52 @@
         }
         .t-card { background: var(--soft-pink); padding: 30px; border-radius: 10px; font-style: italic; position: relative; }
 
+        .insta-link {
+        color: #c5a059; /* gold */
+        font-weight: 600;
+        text-decoration: none;
+        }
+
+        .insta-link:hover {
+            color: #a8843d; /* darker gold */
+        }
+        .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 2000;
+        }
+
+        .modal-content {
+            background: #fff;
+            width: 300px;
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .modal-content h3 {
+            margin-bottom: 15px;
+        }
+
+        .modal-content a {
+            color: var(--gold);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .close {
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
         /* Footer */
         footer { background: var(--dark); color: white; text-align: center; padding: 50px 20px; margin-top: 50px; }
 
@@ -129,37 +175,38 @@
 </header>
 
 <section id="packages">
-    <h2>Wedding Packages</h2>
+    <h2>Packages</h2>
     <div class="package-container">
         <div class="card">
-            <h3>Classic Bride</h3>
-            <div class="Contact">Contact Now</div>
+            <h3>Royal Bride</h3>
+            <!-- <div class="Contact">Contact Now</div> -->
             <ul>
                 <li>HD Bridal Makeup</li>
                 <li>Basic Hair Styling</li>
                 <li>Saree/Dupatta Draping</li>
             </ul>
-            <a href="#" class="btn">Book Now</a>
+            <a href="#" class="btn" onclick="openModal(event)">Book Now</a>
+
         </div>
         <div class="card">
-            <h3>Royal Bride</h3>
-            <div class="Contact">Contact Now</div>
+            <h3>Birthday Makeup</h3>
+            <!-- <div class="Contact">Contact Now</div> -->
             <ul>
                 <li>Premium Airbrush Makeup</li>
-                <li>Advanced Hair Artistry</li>
+                <!-- <li>Advanced Hair Artistry</li> -->
                 <li>Jewelry Setting & Lashes</li>
             </ul>
-            <a href="#" class="btn">Book Now</a>
+            <a href="#" class="btn" onclick="openModal(event)">Book Now</a>
         </div>
         <div class="card">
             <h3>Bridal Party</h3>
-            <div class="Contact">Contact Now</div>
+            <!-- <div class="Contact">Contact Now</div> -->
             <ul>
                 <li>Standard Glam Makeup</li>
                 <li>Elegant Blowdry/Curls</li>
-                <li>Group Discounts Available</li>
+                <!-- <li>Group Discounts Available</li> -->
             </ul>
-            <a href="#" class="btn">Book Now</a>
+            <a href="#" class="btn" onclick="openModal(event)">Book Now</a>
         </div>
     </div>
 </section>
@@ -168,9 +215,19 @@
     <h2>The Gallery</h2>
     <div class="gallery">
         <img src="images/image.jpeg" alt="Bridal Look 0">
+        <img src="images/hairimage2.jpeg" alt="Hair Image 2">
+        <img src="images/image7.jpeg" alt="Bridal Look 7">
         <img src="images/image2.jpeg" alt="Bridal Look 2">
+        <img src="images/hairimage1.jpeg" alt="Hair Image 1">
+        <img src="images/image6.jpeg" alt="Bridal Look 6">
+
         <!-- <img src="images/image3.jpeg" alt="Bridal Look 3"> -->
-        <img src="images/image4.jpeg" alt="Bridal Look 4">
+        <img src="images/handimage1.jpeg" alt="hand image 1">
+        <img src="images/image5.jpeg" alt="Bridal Look 5">
+        
+        
+        
+        
     </div>
 </section>
 
@@ -179,19 +236,55 @@
     <div class="testimonial-grid">
         <div class="t-card">
             <p>"I felt like a princess. The makeup stayed fresh from the morning ceremony until the late-night party!"</p>
-            <br><strong>- Jessica M.</strong>
+            <br><strong>- Sandhya.</strong>
         </div>
         <div class="t-card">
             <p>"The best experience ever. She listens to what you want and executes it perfectly."</p>
-            <br><strong>- Sophia L.</strong>
+            <br><strong>- Kavya.</strong>
         </div>
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 Bridal Artistry by Your Friend.</p>
-    <p>Follow her on Instagram: @YourHandle</p>
-</footer>
+    <p>&copy; 2026 Bridal Artistry by Pravalika.</p>
+    <p>Follow me on Instagram:
+    <a href="https://www.instagram.com/pravalika_makeover_18?igsh=aDZiZmExdW41eTYw"
+    class="insta-link"
+    target="_blank"
+    rel="noopener">
+    pravalika_makeover_18
+    </a>
 
+</p>
+</footer>
+<!-- Contact Modal -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Contact Now</h3>
+        <p>
+            📞 <a href="tel:+919515155442">+91 95151 55442</a>
+        </p>
+    </div>
+</div>
+
+
+<script>
+    function openModal(event) {
+        event.preventDefault();
+        document.getElementById("contactModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("contactModal").style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        const modal = document.getElementById("contactModal");
+        if (event.target === modal) {
+            closeModal();
+        }
+    }
+</script>
 </body>
 </html>
