@@ -146,6 +146,32 @@
             cursor: pointer;
         }
 
+        .img-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 4000;
+        align-items: center;
+        justify-content: center;
+            }
+
+        .img-modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .img-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 35px;
+            color: white;
+            cursor: pointer;
+        }
+
+
         /* Footer */
         footer { background: var(--dark); color: white; text-align: center; padding: 50px 20px; margin-top: 50px; }
 
@@ -214,20 +240,14 @@
 <section id="gallery">
     <h2>The Gallery</h2>
     <div class="gallery">
-        <img src="images/image.jpeg" alt="Bridal Look 0">
-        <img src="images/hairimage2.jpeg" alt="Hair Image 2">
-        <img src="images/image7.jpeg" alt="Bridal Look 7">
-        <img src="images/image2.jpeg" alt="Bridal Look 2">
-        <img src="images/hairimage1.jpeg" alt="Hair Image 1">
-        <img src="images/image6.jpeg" alt="Bridal Look 6">
-
-        <!-- <img src="images/image3.jpeg" alt="Bridal Look 3"> -->
-        <img src="images/handimage1.jpeg" alt="hand image 1">
-        <img src="images/image5.jpeg" alt="Bridal Look 5">
-        
-        
-        
-        
+        <img src="images/image.jpeg" alt="Bridal Look 0" onclick="openImage(this)">
+        <img src="images/hairimage2.jpeg" alt="Hair Image 2" onclick="openImage(this)">
+        <img src="images/image7.jpeg" alt="Bridal Look 7" onclick="openImage(this)">
+        <img src="images/image2.jpeg" alt="Bridal Look 2" onclick="openImage(this)">
+        <img src="images/hairimage1.jpeg" alt="Hair Image 1" onclick="openImage(this)">
+        <img src="images/image6.jpeg" alt="Bridal Look 6" onclick="openImage(this)">
+        <img src="images/handimage1.jpeg" alt="Hand Image 1" onclick="openImage(this)">
+        <img src="images/image5.jpeg" alt="Bridal Look 5" onclick="openImage(this)">
     </div>
 </section>
 
@@ -267,6 +287,12 @@
         </p>
     </div>
 </div>
+<!-- Image Lightbox -->
+<div id="imageModal" class="img-modal">
+    <span class="img-close" onclick="closeImage()">&times;</span>
+    <img id="fullImage" class="img-modal-content">
+</div>
+
 
 
 <script>
@@ -277,6 +303,18 @@
 
     function closeModal() {
         document.getElementById("contactModal").style.display = "none";
+    }
+
+    function openImage(img) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("fullImage");
+
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+    }
+
+    function closeImage() {
+        document.getElementById("imageModal").style.display = "none";
     }
 
     window.onclick = function (event) {
